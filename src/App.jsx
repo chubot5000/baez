@@ -288,12 +288,12 @@ const AboutSection = () => (
             </p>
           </div>
         </div>
-        <a
-          href="#about"
+        <Link
+          to="/about"
           className="inline-flex items-center gap-2 text-sm uppercase tracking-widest border-b border-[#D4C5A5] pb-1 hover:text-[#D4C5A5] transition-colors text-white"
         >
           Read Full Bio
-        </a>
+        </Link>
       </RevealElement>
     </div>
   </section>
@@ -334,7 +334,7 @@ const ServiceItem = ({ service }) => {
 const ServicesSection = () => {
   const [hoveredList, setHoveredList] = useState(false);
   return (
-    <section id="coaching" className="py-32 relative overflow-hidden bg-[#0a0a0c]">
+    <section id="coaching" className="py-32 relative overflow-hidden bg-[#0C1A05]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <RevealElement className="lg:col-span-5">
           <span className="text-xs font-bold uppercase tracking-widest text-[#D4C5A5] mb-4 block">
@@ -450,8 +450,17 @@ const EventsSection = () => (
 );
 
 const PhiladelphiaSection = () => (
-  <section className="py-24 md:py-32 border-t border-white/5">
-    <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+  <section className="py-24 md:py-32 relative overflow-hidden">
+    <div className="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1569761316261-9a8696fa2ca3?q=80&w=2070&auto=format&fit=crop"
+        className="w-full h-full object-cover"
+        alt="Philadelphia skyline"
+        style={{ filter: 'brightness(0.15)' }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0C1A05]/90 via-[#0C1A05]/70 to-transparent" />
+    </div>
+    <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <RevealElement>
           <span className="text-xs font-bold uppercase tracking-widest text-[#D4C5A5] mb-4 block">
@@ -461,13 +470,13 @@ const PhiladelphiaSection = () => (
             Therapy in<br />
             <span className="text-[#D4C5A5] italic">Philadelphia</span>
           </h2>
-          <p className="text-gray-400 text-lg font-light leading-relaxed mb-6">
+          <p className="text-gray-300 text-lg font-light leading-relaxed mb-6">
             Sol Practice is based in Philadelphia, serving the communities that make this city what it is. From Center City to University City, Old City to South Philly, West Philadelphia to Northern Liberties — we're here for the people doing the work of living in a city that asks a lot of you.
           </p>
-          <p className="text-gray-400 text-lg font-light leading-relaxed mb-6">
+          <p className="text-gray-300 text-lg font-light leading-relaxed mb-6">
             As a licensed clinical social worker (LCSW) in Philadelphia, Jullian Baez provides culturally grounded therapy that meets the unique needs of Philly's diverse population. Whether you're a Temple student navigating identity, a young professional in Rittenhouse burning out, or building a life in Kensington — therapy should reflect your reality.
           </p>
-          <p className="text-gray-400 text-lg font-light leading-relaxed">
+          <p className="text-gray-300 text-lg font-light leading-relaxed">
             Can't make it in person? Telehealth therapy is available for anyone located in Pennsylvania. Same quality of care, same grounded approach — from wherever you are in the state.
           </p>
         </RevealElement>
@@ -479,9 +488,9 @@ const PhiladelphiaSection = () => (
               { area: 'South Philly', desc: 'Community-rooted care' },
               { area: 'All of PA', desc: 'Telehealth across the state' },
             ].map((item) => (
-              <div key={item.area} className="p-6 border border-white/5 bg-white/[0.02]">
+              <div key={item.area} className="p-6 border border-white/10 bg-black/30 backdrop-blur-sm">
                 <h4 className="text-white text-lg font-light mb-2">{item.area}</h4>
-                <p className="text-gray-500 text-sm">{item.desc}</p>
+                <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -540,8 +549,8 @@ const App = () => {
       <AboutSection />
       <ServicesSection />
       <TestimonialSection />
-      <EventsSection />
       <PhiladelphiaSection />
+      <EventsSection />
       <CtaSection />
       <Footer />
     </div>

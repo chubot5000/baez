@@ -25,6 +25,15 @@ const NavLink = ({ href, label, children }) => {
   );
 };
 
+const RouterNavLink = ({ to, label }) => (
+  <div className="relative">
+    <Link to={to} className="relative group">
+      {label}
+      <span className="absolute -bottom-1 left-1/2 h-px bg-[#D4C5A5] block w-0 group-hover:w-full transition-all duration-400 -translate-x-1/2" />
+    </Link>
+  </div>
+);
+
 const servicePages = [
   { path: '/somatic-mindfulness', label: 'Somatic Mindfulness' },
   { path: '/cognitive-reframing', label: 'Cognitive Reframing' },
@@ -52,10 +61,13 @@ const Navbar = ({ scrolled }) => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 whitespace-nowrap">
           <img src="/sol-logo.svg" alt="Sol Practice" className="w-8 h-8" />
-          <span className="text-xl font-light tracking-wide text-white">SOL PRACTICE</span>
+          <span className="text-xl tracking-wide text-white" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500 }}>
+            SOL PRACTICE
+          </span>
         </Link>
         <div className="hidden md:flex gap-10 text-sm tracking-widest font-medium uppercase text-gray-300">
-          <NavLink href={getHref('about')} label="About">
+          <RouterNavLink to="/about" label="ABOUT" />
+          <NavLink href={getHref('programs')} label="Programs">
             <div
               className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
               style={{ minWidth: '220px' }}
@@ -73,20 +85,8 @@ const Navbar = ({ scrolled }) => {
               </div>
             </div>
           </NavLink>
-          <NavLink href={getHref('programs')} label="Programs" />
-          <NavLink href={getHref('events')} label="Events" />
-          <div className="relative">
-            <Link to="/about" className="relative group">
-              COACHING
-              <span className="absolute -bottom-1 left-1/2 h-px bg-[#D4C5A5] block w-0 group-hover:w-full transition-all duration-400 -translate-x-1/2" />
-            </Link>
-          </div>
-          <div className="relative">
-            <Link to="/blog" className="relative group">
-              BLOG
-              <span className="absolute -bottom-1 left-1/2 h-px bg-[#D4C5A5] block w-0 group-hover:w-full transition-all duration-400 -translate-x-1/2" />
-            </Link>
-          </div>
+          <RouterNavLink to="/coaching" label="COACHING" />
+          <RouterNavLink to="/blog" label="BLOG" />
         </div>
         <a
           href={getHref('book')}
@@ -105,30 +105,10 @@ const Navbar = ({ scrolled }) => {
       </div>
       {menuOpen && (
         <div className="md:hidden fixed inset-0 top-[60px] bg-[#0f1012]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 z-40">
-          {['About', 'Programs', 'Events'].map((item) => (
-            <a
-              key={item}
-              href={getHref(item.toLowerCase())}
-              className="text-2xl font-light text-white tracking-wide"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-          <Link
-            to="/about"
-            className="text-2xl font-light text-white tracking-wide"
-            onClick={() => setMenuOpen(false)}
-          >
-            Coaching
-          </Link>
-          <Link
-              to="/blog"
-              className="text-2xl font-light text-white tracking-wide"
-              onClick={() => setMenuOpen(false)}
-            >
-              Blog
-            </Link>
+          <Link to="/about" className="text-2xl font-light text-white tracking-wide" onClick={() => setMenuOpen(false)}>About</Link>
+          <a href={getHref('programs')} className="text-2xl font-light text-white tracking-wide" onClick={() => setMenuOpen(false)}>Programs</a>
+          <Link to="/coaching" className="text-2xl font-light text-white tracking-wide" onClick={() => setMenuOpen(false)}>Coaching</Link>
+          <Link to="/blog" className="text-2xl font-light text-white tracking-wide" onClick={() => setMenuOpen(false)}>Blog</Link>
           <div className="w-16 h-px bg-white/10 my-2" />
           {servicePages.map((s) => (
             <Link

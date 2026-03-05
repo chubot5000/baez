@@ -8,6 +8,7 @@ import BreathworkRegulation from './pages/BreathworkRegulation'
 import Psychotherapy from './pages/Psychotherapy'
 import Blog from './pages/Blog'
 import AboutPage from './pages/About'
+import Coaching from './pages/Coaching'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/psychotherapy" element={<Psychotherapy />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/coaching" element={<Coaching />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

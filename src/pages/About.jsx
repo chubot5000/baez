@@ -90,7 +90,7 @@ const About = () => {
       </section>
 
       {/* Certifications */}
-      <section className="py-24 md:py-32 bg-[#0a0a0c]">
+      <section className="py-24 md:py-32 bg-[#0C1A05]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <RevealElement>
             <img
@@ -104,7 +104,17 @@ const About = () => {
               <span className="text-xs font-bold uppercase tracking-widest text-[#D4C5A5] mb-4 block">
                 02
               </span>
-              <h2 className="text-4xl md:text-5xl font-light text-white mb-8">Certifications</h2>
+              <h2 className="text-4xl md:text-5xl font-light text-white mb-6">Certifications</h2>
+              <div className="flex flex-wrap gap-3 mb-10">
+                {certifications.map((cert) => (
+                  <span
+                    key={cert}
+                    className="px-5 py-2.5 text-sm text-gray-300 border border-white/10 rounded-full transition-all duration-300 hover:border-[#D4C5A5] hover:text-[#D4C5A5] hover:bg-[#D4C5A5]/10 hover:-translate-y-0.5 cursor-default"
+                  >
+                    {cert}
+                  </span>
+                ))}
+              </div>
               <p className="text-gray-400 text-lg font-light leading-relaxed mb-6">
                 I'm certified in Prolonged Exposure (PE) therapy for trauma and PTSD, and draw
                 from a wide range of clinical tools — humanistic, psychodynamic, CBT, motivational
@@ -112,22 +122,12 @@ const About = () => {
                 meditation through the 1 Giant Mind technique, which I integrate into therapy when
                 it serves your path toward balance and resilience.
               </p>
-              <p className="text-gray-400 text-lg font-light leading-relaxed mb-10">
+              <p className="text-gray-400 text-lg font-light leading-relaxed">
                 Over the years, I've worked in a variety of settings — from hospitals to schools to
                 community programs — and now focus on outpatient work with adults, both in-person
                 and virtually. I'm here to help you reconnect with yourself, move through what's
                 heavy, and step into a version of life that feels more aligned.
               </p>
-              <div className="flex flex-wrap gap-3">
-                {certifications.map((cert) => (
-                  <span
-                    key={cert}
-                    className="px-5 py-2.5 text-sm text-gray-300 border border-white/10 rounded-full"
-                  >
-                    {cert}
-                  </span>
-                ))}
-              </div>
             </div>
           </RevealElement>
         </div>
