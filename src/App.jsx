@@ -566,9 +566,9 @@ const CtaSection = () => (
   <section id="book" className="py-32 flex items-center justify-center relative overflow-hidden">
     <div className="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop"
-        className="w-full h-full object-cover opacity-15"
-        alt="Ocean"
+        src="/cta-bg.png"
+        className="w-full h-full object-cover opacity-30"
+        alt="Cyclist at sunset"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0f1012] via-[#0f1012]/80 to-transparent" />
     </div>
