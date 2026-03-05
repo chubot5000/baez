@@ -247,7 +247,7 @@ const AboutSection = () => (
         <img
           src="/julian-baez.jpg"
           className="w-full aspect-[4/5] md:aspect-[3/4] object-cover object-top"
-          alt="Julian Baez, LCSW"
+          alt="Jullian Baez, LCSW"
         />
         <div
           className="absolute -bottom-6 -right-6 w-48 h-48 p-6 flex flex-col justify-between"
@@ -268,7 +268,7 @@ const AboutSection = () => (
           <span className="text-gray-400 italic">Built for real people.</span>
         </h2>
         <p className="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-md">
-          I'm Julian Baez, a licensed clinical social worker specializing in mindfulness-based
+          I'm Jullian Baez, a licensed clinical social worker specializing in mindfulness-based
           therapy and somatic healing. My practice is built for people who've been told to "just
           meditate" but never felt seen in those spaces. Whether you're first-gen, code-switching
           through corporate life, or just tired of wellness that wasn't made with you in mind —
@@ -465,7 +465,7 @@ const PhiladelphiaSection = () => (
             Sol Practice is based in Philadelphia, serving the communities that make this city what it is. From Center City to University City, Old City to South Philly, West Philadelphia to Northern Liberties — we're here for the people doing the work of living in a city that asks a lot of you.
           </p>
           <p className="text-gray-400 text-lg font-light leading-relaxed mb-6">
-            As a licensed clinical social worker (LCSW) in Philadelphia, Julian Baez provides culturally grounded therapy that meets the unique needs of Philly's diverse population. Whether you're a Temple student navigating identity, a young professional in Rittenhouse burning out, or building a life in Kensington — therapy should reflect your reality.
+            As a licensed clinical social worker (LCSW) in Philadelphia, Jullian Baez provides culturally grounded therapy that meets the unique needs of Philly's diverse population. Whether you're a Temple student navigating identity, a young professional in Rittenhouse burning out, or building a life in Kensington — therapy should reflect your reality.
           </p>
           <p className="text-gray-400 text-lg font-light leading-relaxed">
             Can't make it in person? Telehealth therapy is available for anyone located in Pennsylvania. Same quality of care, same grounded approach — from wherever you are in the state.

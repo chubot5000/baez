@@ -76,6 +76,12 @@ const Navbar = ({ scrolled }) => {
           <NavLink href={getHref('programs')} label="Programs" />
           <NavLink href={getHref('events')} label="Events" />
           <NavLink href={getHref('coaching')} label="Coaching" />
+          <div className="relative">
+            <Link to="/blog" className="relative group">
+              BLOG
+              <span className="absolute -bottom-1 left-1/2 h-px bg-[#D4C5A5] block w-0 group-hover:w-full transition-all duration-400 -translate-x-1/2" />
+            </Link>
+          </div>
         </div>
         <a
           href={getHref('book')}
@@ -104,6 +110,13 @@ const Navbar = ({ scrolled }) => {
               {item}
             </a>
           ))}
+          <Link
+              to="/blog"
+              className="text-2xl font-light text-white tracking-wide"
+              onClick={() => setMenuOpen(false)}
+            >
+              Blog
+            </Link>
           <div className="w-16 h-px bg-white/10 my-2" />
           {servicePages.map((s) => (
             <Link

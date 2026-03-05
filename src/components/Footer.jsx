@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
       <div className="text-center md:text-left">
         <span className="text-white tracking-wide font-light text-lg block mb-2">SOL PRACTICE</span>
-        <span>© 2026 Julian Baez, LCSW. All rights reserved.</span>
+        <span>© 2026 Jullian Baez, LCSW. All rights reserved.</span>
       </div>
       <div className="flex gap-8 uppercase tracking-widest text-xs">
         {['Instagram', 'LinkedIn', 'TikTok'].map((link) => (

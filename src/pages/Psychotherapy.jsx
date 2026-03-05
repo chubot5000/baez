@@ -5,8 +5,8 @@ const Psychotherapy = () => (
   <ServicePageLayout
     title="Psychotherapy"
     heroImage="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=1400&auto=format&fit=crop"
-    metaTitle="Psychotherapy in Philadelphia | CBT, ACT, Trauma Therapy — Julian Baez, LCSW"
-    metaDescription="Individual psychotherapy in Philadelphia with Julian Baez, LCSW. CBT, ACT, and Prolonged Exposure for trauma. Telehealth and in-person sessions available. Culturally grounded care."
+    metaTitle="Psychotherapy in Philadelphia | CBT, ACT, Trauma Therapy — Jullian Baez, LCSW"
+    metaDescription="Individual psychotherapy in Philadelphia with Jullian Baez, LCSW. CBT, ACT, and Prolonged Exposure for trauma. Telehealth and in-person sessions available. Culturally grounded care."
     description={[
       "Psychotherapy at Sol Practice is individual therapy grounded in evidence-based modalities — Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), and Prolonged Exposure (PE) for trauma. These aren't buzzwords. They're the approaches with the strongest research backing for anxiety, depression, PTSD, and the kind of existential stuck-ness that doesn't always fit neatly into a diagnosis.",
       "CBT helps you understand the connection between your thoughts, feelings, and behaviors — and gives you concrete tools to change patterns that aren't serving you. ACT takes a different angle: instead of fighting difficult thoughts, you learn to hold them with flexibility while moving toward what actually matters to you. For trauma, Prolonged Exposure is one of the most effective treatments available — it helps you process traumatic memories in a structured, safe way so they stop running your life.",

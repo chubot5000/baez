@@ -5,8 +5,8 @@ const BreathworkRegulation = () => (
   <ServicePageLayout
     title="Breathwork & Regulation"
     heroImage="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=1400&auto=format&fit=crop"
-    metaTitle="Breathwork & Nervous System Regulation | Sol Practice — Julian Baez, LCSW Philadelphia"
-    metaDescription="Clinical breathwork and nervous system regulation in Philadelphia with Julian Baez, LCSW. Practical breathing protocols that lower cortisol and build resilience. Telehealth available."
+    metaTitle="Breathwork & Nervous System Regulation | Sol Practice — Jullian Baez, LCSW Philadelphia"
+    metaDescription="Clinical breathwork and nervous system regulation in Philadelphia with Jullian Baez, LCSW. Practical breathing protocols that lower cortisol and build resilience. Telehealth available."
     description={[
       "Breathwork isn't a trend — it's one of the most direct pathways to your nervous system. Your breath is the only autonomic function you can consciously control, which makes it one of the most powerful tools for regulation you already have. The problem is, most people have never been taught how to actually use it.",
       "In this practice, we go beyond 'take a deep breath.' We work with specific breathing protocols backed by research — techniques that measurably lower cortisol, activate your vagus nerve, and shift your nervous system from survival mode into a state where you can actually think, feel, and connect.",

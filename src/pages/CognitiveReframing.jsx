@@ -5,8 +5,8 @@ const CognitiveReframing = () => (
   <ServicePageLayout
     title="Cognitive Reframing"
     heroImage="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=1400&auto=format&fit=crop"
-    metaTitle="Cognitive Reframing Therapy | Sol Practice — Julian Baez, LCSW Philadelphia"
-    metaDescription="Cognitive reframing therapy in Philadelphia with Julian Baez, LCSW. Identify and rewrite the thought patterns keeping you stuck. Evidence-based, culturally grounded."
+    metaTitle="Cognitive Reframing Therapy | Sol Practice — Jullian Baez, LCSW Philadelphia"
+    metaDescription="Cognitive reframing therapy in Philadelphia with Jullian Baez, LCSW. Identify and rewrite the thought patterns keeping you stuck. Evidence-based, culturally grounded."
     description={[
       "Cognitive reframing isn't about toxic positivity or slapping an affirmation over pain. It's about seeing clearly. The stories we tell ourselves — about who we are, what we deserve, what's possible — shape everything. And most of those stories were written by someone else: family systems, cultural expectations, past experiences that taught us to shrink.",
       "In this work, we identify the automatic thought patterns that run your life on autopilot. The inner critic that sounds like a parent. The catastrophizing that feels like preparation. The people-pleasing that disguises itself as kindness. We name these patterns, understand where they came from, and then — with real clinical tools — we start building new ones.",
