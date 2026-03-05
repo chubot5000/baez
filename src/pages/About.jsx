@@ -94,9 +94,9 @@ const About = () => {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <RevealElement>
             <img
-              src="https://images.unsplash.com/photo-1545389336-cf090694435e?q=80&w=1064&auto=format&fit=crop"
+              src="/jullian-meditation.jpg"
               className="w-full aspect-[4/5] object-cover"
-              alt="Meditation practice"
+              alt="Jullian Baez meditating"
             />
           </RevealElement>
           <RevealElement delay="0.1s">
@@ -167,9 +167,9 @@ const About = () => {
           </RevealElement>
           <RevealElement delay="0.1s">
             <img
-              src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=1170&auto=format&fit=crop"
-              className="w-full aspect-[4/5] object-cover"
-              alt="Colombia retreat"
+              src="/jullian-retreat.jpg"
+              className="w-full aspect-[4/5] object-cover object-top"
+              alt="Jullian Baez with retreat group in Medellín"
             />
           </RevealElement>
         </div>
