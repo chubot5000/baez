@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f1012;
+}
+
+::selection {
+  background: #D4C5A5;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1012;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+/* Hide scrollbar on carousels */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
