@@ -75,7 +75,12 @@ const Navbar = ({ scrolled }) => {
           </NavLink>
           <NavLink href={getHref('programs')} label="Programs" />
           <NavLink href={getHref('events')} label="Events" />
-          <NavLink href={getHref('coaching')} label="Coaching" />
+          <div className="relative">
+            <Link to="/about" className="relative group">
+              COACHING
+              <span className="absolute -bottom-1 left-1/2 h-px bg-[#D4C5A5] block w-0 group-hover:w-full transition-all duration-400 -translate-x-1/2" />
+            </Link>
+          </div>
           <div className="relative">
             <Link to="/blog" className="relative group">
               BLOG
@@ -100,7 +105,7 @@ const Navbar = ({ scrolled }) => {
       </div>
       {menuOpen && (
         <div className="md:hidden fixed inset-0 top-[60px] bg-[#0f1012]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 z-40">
-          {['About', 'Programs', 'Events', 'Coaching'].map((item) => (
+          {['About', 'Programs', 'Events'].map((item) => (
             <a
               key={item}
               href={getHref(item.toLowerCase())}
@@ -110,6 +115,13 @@ const Navbar = ({ scrolled }) => {
               {item}
             </a>
           ))}
+          <Link
+            to="/about"
+            className="text-2xl font-light text-white tracking-wide"
+            onClick={() => setMenuOpen(false)}
+          >
+            Coaching
+          </Link>
           <Link
               to="/blog"
               className="text-2xl font-light text-white tracking-wide"

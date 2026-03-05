@@ -7,6 +7,7 @@ import CognitiveReframing from './pages/CognitiveReframing'
 import BreathworkRegulation from './pages/BreathworkRegulation'
 import Psychotherapy from './pages/Psychotherapy'
 import Blog from './pages/Blog'
+import AboutPage from './pages/About'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/breathwork-regulation" element={<BreathworkRegulation />} />
         <Route path="/psychotherapy" element={<Psychotherapy />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
