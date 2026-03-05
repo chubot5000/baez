@@ -90,7 +90,7 @@ const About = () => {
       </section>
 
       {/* Certifications */}
-      <section className="py-24 md:py-32 bg-[#0C1A05]">
+      <section className="py-24 md:py-32 bg-[#060D03]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <RevealElement>
             <img

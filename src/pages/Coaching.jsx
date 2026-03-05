@@ -82,7 +82,7 @@ const Coaching = () => {
       </header>
 
       {/* Services */}
-      <section className="py-24 bg-[#0C1A05]">
+      <section className="py-24 bg-[#060D03]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <RevealElement>
             <h2 className="text-4xl md:text-5xl font-light text-white mb-16">What We Offer</h2>
@@ -172,7 +172,7 @@ const Coaching = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[#0C1A05]">
+      <section className="py-24 bg-[#060D03]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <RevealElement>
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6">Ready to Begin?</h2>

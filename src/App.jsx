@@ -334,7 +334,7 @@ const ServiceItem = ({ service }) => {
 const ServicesSection = () => {
   const [hoveredList, setHoveredList] = useState(false);
   return (
-    <section id="coaching" className="py-32 relative overflow-hidden bg-[#0C1A05]">
+    <section id="coaching" className="py-32 relative overflow-hidden bg-[#060D03]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <RevealElement className="lg:col-span-5">
           <span className="text-xs font-bold uppercase tracking-widest text-[#D4C5A5] mb-4 block">
@@ -458,7 +458,7 @@ const PhiladelphiaSection = () => (
         alt="Philadelphia skyline"
         style={{ filter: 'brightness(0.15)' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0C1A05]/90 via-[#0C1A05]/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0f1012]/90 via-[#0f1012]/70 to-transparent" />
     </div>
     <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
