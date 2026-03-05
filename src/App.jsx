@@ -3,9 +3,9 @@ import React, { useState, useEffect, useRef } from 'react';
 const retreats = [
   {
     id: 1,
-    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1031&auto=format&fit=crop',
-    title: 'The Highland Silence',
-    date: 'October 12–18 • Scottish Highlands',
+    img: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=1170&auto=format&fit=crop',
+    title: 'Raíces',
+    date: 'October 12–18 • Medellín, Colombia',
   },
   {
     id: 2,
@@ -102,8 +102,9 @@ const Navbar = ({ scrolled }) => {
       }}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="text-xl font-light tracking-wide text-white whitespace-nowrap">
-          SOL PRACTICE
+        <a href="#" className="flex items-center gap-3 whitespace-nowrap">
+          <img src="/sol-logo.svg" alt="Sol Practice" className="w-8 h-8" />
+          <span className="text-xl font-light tracking-wide text-white">SOL PRACTICE</span>
         </a>
         <div className="hidden md:flex gap-10 text-sm tracking-widest font-medium uppercase text-gray-300">
           {['About', 'Programs', 'Events', 'Coaching'].map((item) => (
@@ -289,7 +290,7 @@ const RetreatsSection = () => {
       </div>
       <div
         ref={carouselRef}
-        className="flex gap-6 overflow-x-auto px-6 md:px-12 pb-12"
+        className="flex gap-6 overflow-x-auto pb-12 max-w-[1440px] mx-auto px-6 md:px-12"
         style={{
           scrollSnapType: 'x mandatory',
           WebkitOverflowScrolling: 'touch',
@@ -511,9 +512,9 @@ const TestimonialSection = () => (
 const EventCard = ({ event }) => {
   const [hovered, setHovered] = useState(false);
   return (
-    <RevealElement delay={event.delay}>
+    <RevealElement delay={event.delay} className="h-full">
       <div
-        className="p-8 transition-all border border-white/5"
+        className="p-8 transition-all border border-white/5 h-full flex flex-col"
         style={{
           backgroundColor: hovered ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)',
         }}
@@ -529,10 +530,10 @@ const EventCard = ({ event }) => {
         >
           {event.title}
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed mb-8">{event.description}</p>
+        <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-1">{event.description}</p>
         <a
           href="#"
-          className="text-sm pb-1 transition-colors text-white border-b border-gray-700 hover:border-white"
+          className="text-sm pb-1 transition-colors text-white border-b border-gray-700 hover:border-white self-start"
         >
           {event.cta}
         </a>
@@ -552,7 +553,7 @@ const EventsSection = () => (
           View All
         </a>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         {events.map((event) => (
           <EventCard key={event.id} event={event} />
         ))}
