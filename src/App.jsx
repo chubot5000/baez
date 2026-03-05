@@ -52,9 +52,9 @@ const services = [
   {
     id: 4,
     number: '04',
-    title: 'Nature Immersion',
+    title: 'Psychotherapy',
     description:
-      'Structured outdoor exposure that leverages the biophilic effect — resetting your rhythms and clearing the noise through intentional time with the earth.',
+      'Individual therapy grounded in CBT, ACT, and Prolonged Exposure for trauma. Telehealth and in-person. A safe space to be seen, validated, and empowered to live authentically.',
   },
 ];
 
