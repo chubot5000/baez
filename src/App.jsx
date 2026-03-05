@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import RevealElement from './components/RevealElement';
 
 const retreats = [
   {
@@ -32,6 +36,7 @@ const services = [
     id: 1,
     number: '01',
     title: 'Somatic Mindfulness',
+    path: '/somatic-mindfulness',
     description:
       'Reconnect with your body through guided sensation tracking and nervous system regulation. We work with what you carry — not just what you think about.',
   },
@@ -39,6 +44,7 @@ const services = [
     id: 2,
     number: '02',
     title: 'Cognitive Reframing',
+    path: '/cognitive-reframing',
     description:
       'Identify the narratives that keep you stuck. Then rewrite them — not with affirmations, but with real tools rooted in clinical practice.',
   },
@@ -46,6 +52,7 @@ const services = [
     id: 3,
     number: '03',
     title: 'Breathwork & Regulation',
+    path: '/breathwork-regulation',
     description:
       'Practical breathing protocols that lower cortisol in real time. The kind of grounding you can use in a meeting, on a train, or at 3 AM.',
   },
@@ -53,6 +60,7 @@ const services = [
     id: 4,
     number: '04',
     title: 'Psychotherapy',
+    path: '/psychotherapy',
     description:
       'Individual therapy grounded in CBT, ACT, and Prolonged Exposure for trauma. Telehealth and in-person. A safe space to be seen, validated, and empowered to live authentically.',
   },
@@ -87,128 +95,6 @@ const events = [
     delay: '0.2s',
   },
 ];
-
-const Navbar = ({ scrolled }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <nav
-      className="fixed top-0 left-0 w-full z-50 transition-all duration-300"
-      style={{
-        backgroundColor: scrolled ? 'rgba(15,16,18,0.85)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent',
-        padding: scrolled ? '16px 0' : '24px 0',
-      }}
-    >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-3 whitespace-nowrap">
-          <img src="/sol-logo.svg" alt="Sol Practice" className="w-8 h-8" />
-          <span className="text-xl font-light tracking-wide text-white">SOL PRACTICE</span>
-        </a>
-        <div className="hidden md:flex gap-10 text-sm tracking-widest font-medium uppercase text-gray-300">
-          {['About', 'Programs', 'Events', 'Coaching'].map((item) => (
-            <NavLink key={item} href={`#${item.toLowerCase()}`} label={item} />
-          ))}
-        </div>
-        <a
-          href="#book"
-          className="hidden md:inline-block px-6 py-3 text-xs uppercase tracking-widest font-semibold bg-white text-black hover:bg-[#D4C5A5] transition-colors duration-300 rounded-sm whitespace-nowrap"
-        >
-          Book a Session
-        </a>
-        <button
-          className="md:hidden flex flex-col gap-[5px] p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span className={`block w-5 h-[1.5px] bg-white transition-all ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-white transition-all ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
-        </button>
-      </div>
-      {menuOpen && (
-        <div className="md:hidden fixed inset-0 top-[60px] bg-[#0f1012]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 z-40">
-          {['About', 'Programs', 'Events', 'Coaching'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-2xl font-light text-white tracking-wide"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-          <a
-            href="#book"
-            className="mt-4 px-8 py-3 bg-white text-black text-sm uppercase tracking-widest font-semibold rounded-sm"
-            onClick={() => setMenuOpen(false)}
-          >
-            Book a Session
-          </a>
-        </div>
-      )}
-    </nav>
-  );
-};
-
-const NavLink = ({ href, label }) => {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <a
-      href={href}
-      className="relative"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {label}
-      <span
-        className="absolute -bottom-1 left-1/2 h-px bg-[#D4C5A5] block"
-        style={{
-          width: hovered ? '100%' : '0',
-          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-          transform: 'translateX(-50%)',
-        }}
-      />
-    </a>
-  );
-};
-
-const RevealElement = ({ children, delay = '0s', className = '' }) => {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(30px)',
-        transition: `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}`,
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const HeroSection = () => (
   <header className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
@@ -422,12 +308,13 @@ const ServiceItem = ({ service }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex justify-between items-center relative z-10">
-        <h3
-          className="text-2xl md:text-3xl font-light transition-transform duration-500 text-white"
+        <Link
+          to={service.path}
+          className="text-2xl md:text-3xl font-light transition-transform duration-500 text-white hover:text-[#D4C5A5]"
           style={{ transform: hovered ? 'translateX(16px)' : 'translateX(0)' }}
         >
           {service.title}
-        </h3>
+        </Link>
         <span className="text-gray-500 text-sm transition-opacity" style={{ opacity: hovered ? 1 : 0 }}>
           {service.number}
         </span>
@@ -562,6 +449,48 @@ const EventsSection = () => (
   </section>
 );
 
+const PhiladelphiaSection = () => (
+  <section className="py-24 md:py-32 border-t border-white/5">
+    <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <RevealElement>
+          <span className="text-xs font-bold uppercase tracking-widest text-[#D4C5A5] mb-4 block">
+            Rooted in Philly
+          </span>
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
+            Therapy in<br />
+            <span className="text-[#D4C5A5] italic">Philadelphia</span>
+          </h2>
+          <p className="text-gray-400 text-lg font-light leading-relaxed mb-6">
+            Sol Practice is based in Philadelphia, serving the communities that make this city what it is. From Center City to University City, Old City to South Philly, West Philadelphia to Northern Liberties — we're here for the people doing the work of living in a city that asks a lot of you.
+          </p>
+          <p className="text-gray-400 text-lg font-light leading-relaxed mb-6">
+            As a licensed clinical social worker (LCSW) in Philadelphia, Julian Baez provides culturally grounded therapy that meets the unique needs of Philly's diverse population. Whether you're a Temple student navigating identity, a young professional in Rittenhouse burning out, or building a life in Kensington — therapy should reflect your reality.
+          </p>
+          <p className="text-gray-400 text-lg font-light leading-relaxed">
+            Can't make it in person? Telehealth therapy is available for anyone located in Pennsylvania. Same quality of care, same grounded approach — from wherever you are in the state.
+          </p>
+        </RevealElement>
+        <RevealElement delay="0.1s">
+          <div className="grid grid-cols-2 gap-6">
+            {[
+              { area: 'Center City', desc: 'In-person sessions available' },
+              { area: 'University City', desc: 'Near Penn & Drexel campuses' },
+              { area: 'South Philly', desc: 'Community-rooted care' },
+              { area: 'All of PA', desc: 'Telehealth across the state' },
+            ].map((item) => (
+              <div key={item.area} className="p-6 border border-white/5 bg-white/[0.02]">
+                <h4 className="text-white text-lg font-light mb-2">{item.area}</h4>
+                <p className="text-gray-500 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </RevealElement>
+      </div>
+    </div>
+  </section>
+);
+
 const CtaSection = () => (
   <section id="book" className="py-32 flex items-center justify-center relative overflow-hidden">
     <div className="absolute inset-0">
@@ -594,31 +523,6 @@ const CtaSection = () => (
   </section>
 );
 
-const Footer = () => (
-  <footer className="border-t border-white/5 py-16 text-sm text-gray-400">
-    <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-      <div className="text-center md:text-left">
-        <span className="text-white tracking-wide font-light text-lg block mb-2">SOL PRACTICE</span>
-        <span>© 2026 Julian Baez, LCSW. All rights reserved.</span>
-      </div>
-      <div className="flex gap-8 uppercase tracking-widest text-xs">
-        {['Instagram', 'LinkedIn', 'TikTok'].map((link) => (
-          <a key={link} href="#" className="hover:text-white transition-colors">
-            {link}
-          </a>
-        ))}
-      </div>
-      <div className="flex gap-8 uppercase tracking-widest text-xs">
-        {['Privacy', 'Terms'].map((link) => (
-          <a key={link} href="#" className="hover:text-white transition-colors">
-            {link}
-          </a>
-        ))}
-      </div>
-    </div>
-  </footer>
-);
-
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -637,6 +541,7 @@ const App = () => {
       <ServicesSection />
       <TestimonialSection />
       <EventsSection />
+      <PhiladelphiaSection />
       <CtaSection />
       <Footer />
     </div>
