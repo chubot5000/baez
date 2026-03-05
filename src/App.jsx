@@ -214,12 +214,12 @@ const HeroSection = () => (
   <header className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
     <div className="absolute inset-0 z-0">
       <img
-        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070&auto=format&fit=crop"
-        className="w-full h-full object-cover opacity-50"
-        alt="Misty mountain landscape"
-        style={{ objectPosition: 'center 40%' }}
+        src="/hero-bg.png"
+        className="w-full h-full object-cover opacity-70"
+        alt="Silhouette"
+        style={{ objectPosition: 'center 20%' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0f1012] via-[#0f1012]/40 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0f1012] via-[#0f1012]/30 to-transparent" />
     </div>
     <div className="relative z-10 text-center max-w-5xl px-6">
       <RevealElement>
